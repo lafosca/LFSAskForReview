@@ -7,7 +7,7 @@
 //
 
 #import "LFSAskForReviewService.h"
-#import "UIAlertView+MKBlockAdditions.h"
+#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
 @implementation LFSAskForReviewService
 
@@ -56,18 +56,13 @@
     NSString *negativeTitle = [self.dataSource negativeButtonTitle];
     NSString *positiveTitle = [self.dataSource positiveButtonTitle];
     
-    [UIAlertView alertViewWithTitle:[self.dataSource title]
-                            message:[self.dataSource message]
-                  cancelButtonTitle:nil
-                  otherButtonTitles:@[negativeTitle, positiveTitle]
-                          onDismiss:^(int buttonIndex) {
-                              
-                              if (buttonIndex == 0) {
-                                  [self.delegate userResponseWasPositive];
-                              } else {
-                                  [self.delegate userResponseWasNegative];
-                              }
-                          } onCancel:nil];
+    [UIAlertView showWithTitle:[self.dataSource title] message:[self.dataSource message] cancelButtonTitle:nil otherButtonTitles:@[negativeTitle, positiveTitle] tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == 0) {
+            [self.delegate userResponseWasPositive];
+        } else {
+            [self.delegate userResponseWasNegative];
+        }
+    }];
 }
 
 @end

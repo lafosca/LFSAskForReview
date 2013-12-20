@@ -1,6 +1,6 @@
 #Introduction
 
-LFSAskForReviews is a class that you can add to your iOS app in order to ask the user to review it. Its main features are that it doesn't ask the user to review the app more than once per version and that it's fully customizable, you can:
+LFSAskForReview is a class that you can add to your iOS app in order to ask the user to review it. Its main features are that it doesn't ask the user to review the app more than once per version and that it's fully customizable, you can:
 
 - decide which actions and how many repetitions are needed before displaying the alert (datasource protocol)
 - set the title, message and button titles of the alert (datasource protocol)
@@ -18,7 +18,7 @@ LFSAskForReviews is a class that you can add to your iOS app in order to ask the
 @property (strong, nonatomic) id<LFSAskForReviewServiceDelegate>delegate;
 
 //Singleton
-+ (LFSAskForRewiewService *)sharedService;
++ (LFSAskForReviewService *)sharedService;
 
 //Method to call when the user action that could trigger the ask for review alert happened.
 - (void)askIfNecessaryAfterUserAction:(NSString *)action;

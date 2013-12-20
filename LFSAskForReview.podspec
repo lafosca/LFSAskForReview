@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "LFSAskForReview"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "An iOS class to add a customizable ask for review service."
   s.homepage     = "https://github.com/LFSAskForReview"
   s.screenshots  = "https://i.cloudup.com/gwQpHAlp2E.png"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Lluís Gómez" => "lluisgomez@lafosca.cat" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/lafosca/LFSAskForReview.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/lafosca/LFSAskForReview.git", :tag => "0.0.3" }
   s.source_files = '*.{h,m}'
   s.requires_arc = true
   s.dependency 'UIAlertView+Blocks', '~> 0.7'

@@ -58,9 +58,9 @@
     
     [UIAlertView showWithTitle:[self.dataSource title] message:[self.dataSource message] cancelButtonTitle:nil otherButtonTitles:@[negativeTitle, positiveTitle] tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
         if (buttonIndex == 0) {
-            [self.delegate userResponseWasPositive];
-        } else {
             [self.delegate userResponseWasNegative];
+        } else {
+            [self.delegate userResponseWasPositive];
         }
     }];
 }
